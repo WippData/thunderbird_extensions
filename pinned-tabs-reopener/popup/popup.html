@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pinned Tabs Reopener</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <section class="panel">
+        <div class="panel-header">
+          <h1>Pinned Tabs Reopener</h1>
+          <button id="refresh-button" class="secondary-button" type="button">Refresh</button>
+        </div>
+        <div id="active-tab-card" class="active-tab-card"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Pinned Tabs</h2>
+          <span id="pin-count" class="pin-count">0</span>
+        </div>
+        <div id="status-message" class="status-message" hidden></div>
+        <div id="pinned-tabs-list" class="pinned-tabs-list"></div>
+      </section>
+    </main>
+
+    <template id="pinned-tab-template">
+      <article class="pin-row">
+        <div class="pin-copy">
+          <div class="pin-alias"></div>
+          <div class="pin-title-row">
+            <strong class="pin-title"></strong>
+            <span class="pin-type"></span>
+          </div>
+          <div class="pin-url"></div>
+          <div class="pin-meta"></div>
+          <div class="pin-status"></div>
+          <form class="alias-form">
+            <input class="alias-input" type="text" maxlength="120" placeholder="Tab name alias">
+            <button class="secondary-button alias-save-button" type="submit">Save Alias</button>
+            <button class="secondary-button alias-clear-button" type="button">Clear</button>
+          </form>
+        </div>
+        <div class="pin-actions">
+          <button class="danger-button unpin-button" type="button">Unpin</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
