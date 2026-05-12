@@ -1,0 +1,8 @@
+[
+  {
+    "namespace": "calendarInlineAttendees",
+    "description": "Internal experiment used to inject an inline attendee editor into Thunderbird's event dialog.",
+    "functions": [],
+    "events": []
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "Owl Teams Blocker",
+  "version": "0.1.0",
+  "description": "Blocks Microsoft Teams from loading inside Thunderbird, with a popup for global or best-effort account-scoped control.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "owl-teams-blocker@local",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "storage",
+    "accountsRead",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "*://teams.microsoft.com/*",
+    "*://*.teams.microsoft.com/*",
+    "*://teams.live.com/*",
+    "*://*.teams.live.com/*",
+    "*://cloud.microsoft/*",
+    "*://*.cloud.microsoft/*"
+  ],
+  "background": {
+    "scripts": [
+      "lib/default-config.js",
+      "lib/teams-hosts.js",
+      "background.js"
+    ]
+  },
+  "icons": {
+    "16": "icons/shield-16.svg",
+    "32": "icons/shield-32.svg"
+  },
+  "browser_action": {
+    "default_title": "Owl Teams Blocker",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/shield-16.svg",
+      "32": "icons/shield-32.svg"
+    },
+    "allowed_spaces": []
+  }
+}

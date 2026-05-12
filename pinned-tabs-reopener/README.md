@@ -78,12 +78,12 @@ zip -r pinned-tabs-reopener.xpi manifest.json background.js popup icons
 
 ## Known Limitations
 
-- Thunderbird does not expose a cancelable "before tab close" hook through the generic tabs API. The extension works by detecting `tabs.onRemoved` and then reopening the pinned tab.
+- Thunderbird does not expose a cancelable "before tab close" hook through the generic tabs API. The extension works by detecting `tabs.onRemoved` and then reopening the pinned tab when the tab itself is closed. It does not reopen pinned tabs when an entire Thunderbird window is closing.
 - Thunderbird documents `tabs.create()` as creating a new content tab. That means some tab types, especially `chat`, `special`, or add-on-hosted tabs, may be visible in `tabs.query()` but still not recreate cleanly through `tabs.create({ url })`.
 - Thunderbird does not expose a generic API to directly rename a tab title. The add-on's `Tab name alias` is only a stored label shown inside the popup; it does not change the actual Thunderbird tab caption.
 - If Thunderbird does not expose a usable `url` for a pinned tab, the extension keeps the pin record visible in the popup and logs a clear restore failure, but it cannot restore the tab automatically.
 - If Thunderbird refuses to create the tab in the original window, the extension falls back to another normal Thunderbird window or opens a new normal window.
-- Pinned records persist in storage across restarts, but this MVP does not restore them on Thunderbird startup. Auto-reopen only runs when a close event happens while the extension is active.
+- Pinned records persist in storage across restarts, but this MVP does not restore them on Thunderbird startup. Auto-reopen only runs when an individual tab close event happens while the extension is active.
 
 ## Thunderbird-Specific Notes
 

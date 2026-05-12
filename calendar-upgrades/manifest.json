@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "Calendar Upgrades",
+  "version": "0.1.0",
+  "description": "Combines calendar call indicators and inline attendees, adds auto-focused week hours, and adds Open With menus for calendar links.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "calendar-upgrades@local",
+      "strict_min_version": "128.0"
+    }
+  },
+  "icons": {
+    "32": "icons/call-indicators-32.svg",
+    "64": "icons/call-indicators-64.svg"
+  },
+  "experiment_apis": {
+    "calendar_upgrades": {
+      "schema": "experiments/calendar-upgrades/schema/calendar-upgrades.json",
+      "parent": {
+        "scopes": [
+          "addon_parent"
+        ],
+        "script": "experiments/calendar-upgrades/parent/ext-calendar-upgrades.js",
+        "events": [
+          "startup"
+        ],
+        "paths": [
+          [
+            "calendarUpgrades"
+          ]
+        ]
+      }
+    },
+    "calendar_inline_attendees": {
+      "schema": "experiments/calendar-inline-attendees/schema/calendar-inline-attendees.json",
+      "parent": {
+        "scopes": [
+          "addon_parent"
+        ],
+        "script": "experiments/calendar-inline-attendees/parent/ext-calendar-inline-attendees.js",
+        "events": [
+          "startup"
+        ],
+        "paths": [
+          [
+            "calendarInlineAttendees"
+          ]
+        ]
+      }
+    }
+  }
+}

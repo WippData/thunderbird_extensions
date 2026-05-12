@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Owl Teams Blocker</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <section class="panel">
+        <div class="panel-header">
+          <h1>Owl Teams Blocker</h1>
+          <button id="refresh-button" class="secondary-button" type="button">Refresh</button>
+        </div>
+
+        <div id="status-message" class="status-message" hidden></div>
+
+        <label class="toggle-row" for="global-enabled">
+          <span class="toggle-copy">
+            <strong>Enable Teams blocking</strong>
+            <span>Intercept Teams requests and replace Teams tabs with a blocked page.</span>
+          </span>
+          <input id="global-enabled" type="checkbox">
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>Scope</h2>
+        <div class="mode-group">
+          <label class="mode-option">
+            <input id="mode-all" type="radio" name="scope-mode" value="all">
+            <span>Block Teams for all accounts</span>
+          </label>
+          <label class="mode-option">
+            <input id="mode-selected" type="radio" name="scope-mode" value="selectedAccounts">
+            <span>Only selected accounts</span>
+          </label>
+        </div>
+        <div id="scope-notice" class="notice"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Accounts</h2>
+          <span id="account-count" class="count-badge">0</span>
+        </div>
+        <div id="accounts-list" class="accounts-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Host Rules</h2>
+          <span id="host-count" class="count-badge">0</span>
+        </div>
+        <ul id="host-pattern-list" class="host-pattern-list"></ul>
+      </section>
+    </main>
+
+    <template id="account-template">
+      <label class="account-row">
+        <input class="account-checkbox" type="checkbox">
+        <span class="account-copy">
+          <strong class="account-label"></strong>
+          <span class="account-meta"></span>
+        </span>
+      </label>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

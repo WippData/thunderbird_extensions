@@ -1,0 +1,121 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.45;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(58, 113, 181, 0.18), transparent 34%),
+    linear-gradient(180deg, #eef3fa, #d9e5f2);
+  color: #16304f;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.blocked-shell {
+  align-items: center;
+  display: grid;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.blocked-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(22, 48, 79, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 20px 48px rgba(22, 48, 79, 0.12);
+  max-width: 760px;
+  padding: 28px;
+  width: 100%;
+}
+
+.eyebrow {
+  color: #2b5a93;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.1;
+  margin: 12px 0;
+}
+
+.lede {
+  color: #415974;
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+.details {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.details div {
+  background: #f6faff;
+  border: 1px solid rgba(22, 48, 79, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+dt {
+  color: #59708b;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.fallback-note {
+  background: rgba(180, 111, 0, 0.12);
+  border: 1px solid rgba(180, 111, 0, 0.18);
+  border-radius: 14px;
+  color: #6f4700;
+  margin-top: 18px;
+  padding: 14px 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(77, 126, 196, 0.2), transparent 34%),
+      linear-gradient(180deg, #0f1825, #131f30);
+    color: #edf3fb;
+  }
+
+  .blocked-card {
+    background: rgba(20, 29, 42, 0.94);
+    border-color: rgba(205, 218, 238, 0.12);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.32);
+  }
+
+  .eyebrow {
+    color: #9ec1ff;
+  }
+
+  .lede,
+  dt {
+    color: #b8c8db;
+  }
+
+  .details div {
+    background: #172233;
+    border-color: rgba(205, 218, 238, 0.1);
+  }
+
+  .fallback-note {
+    background: rgba(216, 173, 91, 0.12);
+    border-color: rgba(216, 173, 91, 0.16);
+    color: #ffd68c;
+  }
+}
