@@ -344,6 +344,13 @@ async function handleTabRemoved(tabId, removeInfo) {
     return;
   }
 
+  if (removeInfo.isWindowClosing) {
+    await updateRecord(record.pinId, {
+      tabId: null
+    });
+    return;
+  }
+
   if (reopenInProgress.has(record.pinId) || hasRecentRemoval(record.pinId, tabId)) {
     return;
   }
@@ -380,7 +387,7 @@ async function reopenPinnedTab(record, removeInfo) {
   }
 
   const restoreAttempts = [];
-  if (!removeInfo.isWindowClosing && typeof record.windowId === "number") {
+  if (typeof record.windowId === "number") {
     restoreAttempts.push(() =>
       browser.tabs.create({
         url: record.url,

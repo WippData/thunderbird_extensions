@@ -1,0 +1,8 @@
+[
+  {
+    "namespace": "calendarUpgrades",
+    "description": "Internal experiment that upgrades Thunderbird calendar windows with inline attendees, focused week hours, and better link handling.",
+    "functions": [],
+    "events": []
+  }
+]

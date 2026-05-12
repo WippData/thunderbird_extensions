@@ -1,0 +1,188 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+body {
+  background: #eef3f9;
+  color: #13263f;
+  margin: 0;
+  min-width: 360px;
+}
+
+.popup {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(19, 38, 63, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(19, 38, 63, 0.08);
+  padding: 12px;
+}
+
+.panel h1,
+.panel h2 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.panel-header {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.toggle-row,
+.mode-option,
+.account-row {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-row {
+  justify-content: space-between;
+}
+
+.toggle-copy,
+.account-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.toggle-copy span,
+.account-meta,
+.notice {
+  color: #51657f;
+  font-size: 12px;
+}
+
+.mode-group,
+.accounts-list {
+  display: grid;
+  gap: 10px;
+}
+
+.notice {
+  background: #f6f9fd;
+  border: 1px solid rgba(19, 38, 63, 0.1);
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.account-row,
+.empty-state {
+  background: #f8fbff;
+  border: 1px solid rgba(19, 38, 63, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.host-pattern-list {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.host-pattern-list li {
+  background: #f8fbff;
+  border: 1px solid rgba(19, 38, 63, 0.1);
+  border-radius: 10px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12px;
+  padding: 8px 10px;
+}
+
+.count-badge {
+  background: #1b3d67;
+  border-radius: 999px;
+  color: #f4f8fc;
+  font-size: 12px;
+  min-width: 22px;
+  padding: 2px 8px;
+  text-align: center;
+}
+
+button {
+  background: linear-gradient(135deg, #1b3d67, #2e69a8);
+  border: 0;
+  border-radius: 8px;
+  color: #f8fbff;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px 12px;
+}
+
+button:disabled,
+input:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.secondary-button {
+  background: rgba(27, 61, 103, 0.1);
+  color: #1b3d67;
+}
+
+.status-message {
+  background: rgba(150, 43, 43, 0.12);
+  border: 1px solid rgba(150, 43, 43, 0.2);
+  border-radius: 8px;
+  color: #7f1d1d;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121c2a;
+    color: #e7eef9;
+  }
+
+  .panel {
+    background: rgba(23, 34, 49, 0.96);
+    border-color: rgba(208, 221, 239, 0.12);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  }
+
+  .toggle-copy span,
+  .account-meta,
+  .notice {
+    color: #b5c5d9;
+  }
+
+  .notice,
+  .account-row,
+  .empty-state,
+  .host-pattern-list li {
+    background: #1a2738;
+    border-color: rgba(208, 221, 239, 0.1);
+  }
+
+  .count-badge {
+    background: #8db8ff;
+    color: #0f2138;
+  }
+
+  .secondary-button {
+    background: rgba(141, 184, 255, 0.14);
+    color: #dce9ff;
+  }
+
+  .status-message {
+    background: rgba(220, 110, 110, 0.15);
+    border-color: rgba(220, 110, 110, 0.2);
+    color: #ffcccc;
+  }
+}
